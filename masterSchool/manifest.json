@@ -1,0 +1,24 @@
+{
+  "name": "MasterSchool - ប្រព័ន្ធគ្រប់គ្រងសិស្ស",
+  "short_name": "MasterSchool",
+  "description": "ប្រព័ន្ធគ្រប់គ្រងសិស្សទំនើប វត្តមាន កាលវិភាគ Lab ប្រឡងកុំព្យូទ័រ វិក្កយបត្រ និងវិញ្ញាបនបត្រ",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#1e1b4b",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "assets/images/default-male.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/images/default-male.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="km" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ប្រព័ន្ធគ្រប់គ្រងសិស្ស - MasterSchool | Modern Student Management System</title>
+  <meta name="description"
+    content="ប្រព័ន្ធគ្រប់គ្រងសិស្សទំនើប ភ្ជាប់ជាមួយ Firebase Realtime Database មាន Dashboard, Data Entry, Table Viewer និង Print កាតសិស្ស">
+  <meta name="keywords"
+    content="student management system, firebase, realtime database, khmer web app, school management">
+  <meta name="author" content="MasterSchool">
+
+  <!-- Favicon & PWA Manifest -->
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎓</text></svg>">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#1e1b4b">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="MasterSchool">
+
+  <!-- Google Fonts: Modern Khmer & Digital Latin Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Battambang:wght@400;700&family=JetBrains+Mono:wght@400;500;600;700&family=Kantumruy+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Koulen&family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap"
+    rel="stylesheet">
+
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- App Modular Stylesheet (Performance & Smooth Scroll Upgraded) -->
+  <link rel="stylesheet" href="css/variables.css?v=20260914_smooth">
+  <link rel="stylesheet" href="css/layout.css?v=20260914_smooth">
+  <link rel="stylesheet" href="css/components.css?v=20260914_smooth">
+  <link rel="stylesheet" href="css/idcard.css?v=20260914_smooth">
+  <link rel="stylesheet" href="css/student-modal.css?v=20260914_smooth">
+
+  <!-- External Visual Libraries (Chart.js, Confetti, QR Code & Scanner, SheetJS Excel) -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+</head>
+
+<body>
+
+  <!-- Fullscreen Loading Spinner -->
+  <div id="globalLoader" class="global-loader">
+    <div class="spinner"></div>
+    <p style="font-weight: 600; font-size: 0.95rem;">កំពុងដំណើរការទិន្នន័យ...</p>
+  </div>
+
+  <!-- Main Application Container (Mounted Dynamically) -->
+  <div id="app" class="app-container"></div>
+
+  <!-- Modals Root Container -->
+  <div id="modalRoot"></div>
+
+  <!-- Toast Notification Stack -->
+  <div id="toastContainer" class="toast-container"></div>
+
+  <!-- Firebase SDK (v10.8.0 Compat) -->
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-database-compat.js"></script>
+
+  <!-- 1. Core Config & Seed Data -->
+  <script src="js/config.js?v=20260914_digital"></script>
+  <script src="js/data.js?v=20260914_digital"></script>
+  <script src="js/exam_papers.js?v=20260914_digital"></script>
+
+  <!-- 2. Services & Visualization Engines -->
+  <script src="js/auth.js?v=20260914_digital"></script>
+  <script src="js/api.js?v=20260914_digital"></script>
+  <script src="js/charts.js?v=20260914_digital"></script>
+  <script src="js/services/telegram.js?v=20260914_digital"></script>
+
+  <!-- 3. UI Components -->
+  <script src="js/components/sidebar.js?v=20260914_digital"></script>
+  <script src="js/components/header.js?v=20260914_digital"></script>
+  <script src="js/components/modals.js?v=20260914_digital"></script>
+
+  <!-- 4. Dynamic Views -->
+  <script src="js/views/login.js?v=20260914_digital"></script>
+  <script src="js/views/student_portal.js?v=20260914_digital"></script>
+  <script src="js/views/dashboard.js?v=20260914_digital"></script>
+  <script src="js/views/register.js?v=20260914_digital"></script>
+  <script src="js/views/directory.js?v=20260914_digital"></script>
+  <script src="js/views/dropped.js?v=20260914_digital"></script>
+  <script src="js/views/graduated.js?v=20260914_digital"></script>
+  <script src="js/views/attendance.js?v=20260914_digital"></script>
+  <script src="js/views/timetable.js?v=20260914_digital"></script>
+  <script src="js/views/exams.js?v=20260914_digital"></script>
+  <script src="js/views/fees.js?v=20260914_digital"></script>
+  <script src="js/views/certificates.js?v=20260914_digital"></script>
+  <script src="js/views/resources.js?v=20260914_digital"></script>
+  <script src="js/views/settings.js?v=20260914_digital"></script>
+
+  <!-- 5. Main Application Orchestrator -->
+  <script src="js/app.js?v=20260914_digital"></script>
+
+  <!-- PWA Service Worker Registration -->
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("./sw.js")
+          .then((reg) => console.log("🚀 MasterSchool PWA Service Worker Registered:", reg.scope))
+          .catch((err) => console.log("⚠️ PWA Service Worker Registration Failed:", err));
+      });
+    }
+  </script>
+
+</body>
+
+</html>

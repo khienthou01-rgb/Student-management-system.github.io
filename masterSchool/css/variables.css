@@ -1,0 +1,223 @@
+/* ==========================================================================
+   CSS Module: Variables, Digital Theme Tokens & High-Tech Typography
+   ========================================================================== */
+
+:root {
+  /* Typography Families */
+  --font-khmer: 'Kantumruy Pro', 'Battambang', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading: 'Kantumruy Pro', 'Outfit', sans-serif;
+  --font-brand: 'Koulen', 'Kantumruy Pro', sans-serif;
+  --font-latin: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-number: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Core Digital Brand Palettes */
+  --primary: #4f46e5;              /* Electric Indigo */
+  --primary-hover: #4338ca;
+  --primary-gradient: linear-gradient(135deg, #6366f1 0%, #4f46e5 50%, #06b6d4 100%);
+  --primary-light: rgba(99, 102, 241, 0.1);
+  --primary-glow: rgba(99, 102, 241, 0.35);
+
+  --secondary: #0ea5e9;            /* Cyber Sky */
+  --cyan: #06b6d4;                 /* Electric Cyan */
+  --cyan-glow: rgba(6, 182, 212, 0.4);
+  
+  --success: #10b981;              /* Neon Emerald */
+  --success-light: rgba(16, 185, 129, 0.12);
+  --success-glow: rgba(16, 185, 129, 0.4);
+  
+  --warning: #f59e0b;              /* Solar Amber */
+  --warning-light: rgba(245, 158, 11, 0.12);
+  --warning-glow: rgba(245, 158, 11, 0.4);
+  
+  --danger: #f43f5e;               /* Neon Rose / Red */
+  --danger-light: rgba(244, 63, 94, 0.12);
+  --danger-glow: rgba(244, 63, 94, 0.4);
+  
+  --purple: #8b5cf6;               /* Digital Violet */
+  --purple-glow: rgba(139, 92, 246, 0.4);
+
+  /* Light Theme (Clean High-Tech Lab Cockpit) */
+  --bg-body: #f4f7fb;
+  --bg-surface: #ffffff;
+  --bg-surface-glass: rgba(255, 255, 255, 0.88);
+  --bg-surface-hover: #f8fafc;
+  --bg-sidebar: #0b1120;
+  --bg-sidebar-hover: rgba(255, 255, 255, 0.07);
+  --bg-sidebar-active: linear-gradient(90deg, #4f46e5 0%, #6366f1 100%);
+  --text-sidebar: #94a3b8;
+  --text-sidebar-bright: #ffffff;
+
+  --text-main: #0f172a;
+  --text-muted: #475569;
+  --text-subtle: #64748b;
+  --border-color: #e2e8f0;
+  --border-glass: rgba(226, 232, 240, 0.85);
+  --border-light: #f1f5f9;
+
+  /* Digital Mesh & Grid (Light) */
+  --mesh-pattern: radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.05) 0%, transparent 40%),
+                  radial-gradient(circle at 90% 80%, rgba(6, 182, 212, 0.06) 0%, transparent 40%),
+                  linear-gradient(rgba(79, 70, 229, 0.02) 1px, transparent 1px),
+                  linear-gradient(90deg, rgba(79, 70, 229, 0.02) 1px, transparent 1px);
+  --mesh-size: 100% 100%, 100% 100%, 36px 36px, 36px 36px;
+
+  /* High-Tech Shadows & Glows (Light) */
+  --shadow-xs: 0 1px 2px rgba(15, 23, 42, 0.05);
+  --shadow-sm: 0 2px 4px rgba(15, 23, 42, 0.06), 0 1px 2px rgba(15, 23, 42, 0.04);
+  --shadow-md: 0 6px 14px -2px rgba(15, 23, 42, 0.08), 0 2px 6px -1px rgba(15, 23, 42, 0.04);
+  --shadow-lg: 0 14px 28px -4px rgba(15, 23, 42, 0.1), 0 6px 10px -2px rgba(15, 23, 42, 0.05);
+  --shadow-xl: 0 24px 44px -8px rgba(15, 23, 42, 0.14);
+  --shadow-cyber: 0 8px 30px rgba(79, 70, 229, 0.15);
+  --glow-accent: 0 0 18px rgba(99, 102, 241, 0.25);
+
+  /* Layout Constants */
+  --sidebar-width: 275px;
+  --header-height: 74px;
+  --border-radius-xs: 6px;
+  --border-radius-sm: 10px;
+  --border-radius: 16px;
+  --border-radius-lg: 22px;
+  --border-radius-full: 9999px;
+  --transition: color 0.2s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1), transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: color 0.35s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.35s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1), transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ==========================================================================
+   Dark Theme: Deep Cyber Obsidian Cockpit
+   ========================================================================== */
+[data-theme="dark"] {
+  --bg-body: #070b14;
+  --bg-surface: #0d1527;
+  --bg-surface-glass: rgba(13, 21, 39, 0.94);
+  --bg-surface-hover: #131d35;
+  --bg-sidebar: #070b14;
+  --bg-sidebar-hover: rgba(255, 255, 255, 0.06);
+  --bg-sidebar-active: linear-gradient(90deg, #4f46e5 0%, #06b6d4 100%);
+  --text-sidebar: #94a3b8;
+  --text-sidebar-bright: #f8fafc;
+
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-subtle: #64748b;
+  --border-color: rgba(99, 102, 241, 0.16);
+  --border-glass: rgba(255, 255, 255, 0.08);
+  --border-light: rgba(255, 255, 255, 0.04);
+
+  /* Digital Mesh & Grid (Dark) */
+  --mesh-pattern: radial-gradient(circle at 12% 18%, rgba(79, 70, 229, 0.15) 0%, transparent 45%),
+                  radial-gradient(circle at 88% 82%, rgba(6, 182, 212, 0.12) 0%, transparent 45%),
+                  radial-gradient(circle at 50% 50%, rgba(139, 92, 246, 0.06) 0%, transparent 60%),
+                  linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                  linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  --mesh-size: 100% 100%, 100% 100%, 100% 100%, 40px 40px, 40px 40px;
+
+  /* High-Tech Shadows & Glows (Dark) */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.5);
+  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.6);
+  --shadow-md: 0 6px 18px rgba(0, 0, 0, 0.65);
+  --shadow-lg: 0 14px 36px rgba(0, 0, 0, 0.75);
+  --shadow-xl: 0 24px 50px rgba(0, 0, 0, 0.85);
+  --shadow-cyber: 0 8px 30px rgba(79, 70, 229, 0.35), 0 0 1px 1px rgba(99, 102, 241, 0.3);
+  --glow-accent: 0 0 22px rgba(99, 102, 241, 0.45);
+}
+
+/* ==========================================================================
+   Typography & Base Reset
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 15px;
+}
+
+body {
+  font-family: var(--font-khmer);
+  background-color: var(--bg-body);
+  color: var(--text-main);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Hardware-accelerated fixed ambient background layer (eliminates scroll stutter) */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: var(--mesh-pattern);
+  background-size: var(--mesh-size);
+  pointer-events: none;
+  z-index: -1;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Prevent Khmer ligature and subscript breaks */
+h1, h2, h3, h4, h5, h6, p, span, a, button, input, select, label, td, th {
+  letter-spacing: normal !important;
+}
+
+/* Latin elements can enjoy crisp tracking */
+.font-sans, .font-mono, .font-number, .font-tech, [lang="en"] {
+  letter-spacing: 0.2px;
+}
+
+/* Typography Utilities */
+.font-bold { font-weight: 700; }
+.font-semibold { font-weight: 600; }
+.font-medium { font-weight: 500; }
+.font-regular { font-weight: 400; }
+.font-light { font-weight: 300; }
+
+.font-heading { font-family: var(--font-heading); }
+.font-brand { font-family: var(--font-brand); }
+.font-sans { font-family: var(--font-latin); }
+.font-number { font-family: var(--font-number); font-feature-settings: "tnum" 1; }
+.font-mono { font-family: var(--font-mono); }
+
+.text-muted { color: var(--text-muted); }
+.text-subtle { color: var(--text-subtle); }
+.text-primary { color: var(--primary); }
+.text-cyan { color: var(--cyan); }
+.text-success { color: var(--success); }
+.text-warning { color: var(--warning); }
+.text-danger { color: var(--danger); }
+
+.text-xs { font-size: 0.75rem; line-height: 1.4; }
+.text-sm { font-size: 0.85rem; line-height: 1.5; }
+.text-base { font-size: 0.95rem; line-height: 1.6; }
+.text-lg { font-size: 1.1rem; line-height: 1.6; }
+.text-xl { font-size: 1.25rem; line-height: 1.5; }
+.text-2xl { font-size: 1.6rem; line-height: 1.4; }
+.text-3xl { font-size: 2rem; line-height: 1.3; }
+
+.text-right { text-align: right; }
+.text-center { text-align: center; }
+
+/* Gradient Text Shimmer */
+.gradient-text-cyber {
+  background: linear-gradient(135deg, #6366f1 0%, #06b6d4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.gradient-text-gold {
+  background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}

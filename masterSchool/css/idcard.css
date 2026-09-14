@@ -1,0 +1,103 @@
+/* ==========================================================================
+   CSS Module: Student ID Card & Printable Layout
+   ========================================================================== */
+
+/* Student ID Card Preview inside Modal */
+.id-card-preview-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.id-card-element {
+  width: 360px;
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+  color: #ffffff;
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 12px 28px rgba(37, 99, 235, 0.35);
+  position: relative;
+  overflow: hidden;
+}
+
+.id-card-element::after {
+  content: "";
+  position: absolute;
+  right: -40px;
+  bottom: -40px;
+  width: 140px;
+  height: 140px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.id-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+}
+
+.id-card-header .school-name {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.id-card-header .card-tag {
+  font-size: 9px;
+  opacity: 0.8;
+  letter-spacing: 0.5px;
+}
+
+.id-card-body {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.id-card-avatar {
+  width: 76px;
+  height: 90px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 2px solid #ffffff;
+  background: #ffffff;
+}
+
+.id-card-details {
+  flex: 1;
+}
+
+.id-card-details h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #fef08a;
+  margin-bottom: 2px;
+}
+
+.id-card-details .id-en {
+  font-size: 11px;
+  opacity: 0.9;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  margin-bottom: 6px;
+}
+
+.id-card-details .info-row {
+  font-size: 11px;
+  margin-bottom: 2px;
+  opacity: 0.95;
+}
+
+/* Print Media Query */
+@media print {
+  body {
+    background: transparent !important;
+    color: #000000 !important;
+  }
+  .sidebar, .top-header, .filter-bar, .action-buttons-group, .pagination-wrapper, .modal-footer {
+    display: none !important;
+  }
+}

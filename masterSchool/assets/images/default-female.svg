@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="femGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ec4899" />
+      <stop offset="100%" stop-color="#be185d" />
+    </linearGradient>
+    <linearGradient id="femBgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fdf2f8" />
+      <stop offset="100%" stop-color="#fce7f3" />
+    </linearGradient>
+  </defs>
+  <rect width="120" height="120" rx="60" fill="url(#femBgGrad)" />
+  <!-- Hair back -->
+  <path d="M34 50 C34 30, 44 20, 60 20 C76 20, 86 30, 86 50 C86 64, 82 72, 80 78 C76 68, 74 60, 74 60 C74 60, 46 60, 46 60 C46 60, 44 68, 40 78 C38 72, 34 64, 34 50 Z" fill="#9d174d" opacity="0.4" />
+  <!-- Head -->
+  <circle cx="60" cy="46" r="21" fill="url(#femGrad)" />
+  <!-- Body -->
+  <path d="M28 106 C28 78, 42 70, 60 70 C78 70, 92 78, 92 106 Z" fill="url(#femGrad)" />
+  <!-- Necklace / collar detail -->
+  <path d="M52 70 Q60 80 68 70" stroke="#fbcfe8" stroke-width="3" fill="none" />
+</svg>

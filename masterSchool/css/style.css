@@ -1,0 +1,8 @@
+/* ==========================================================================
+   MasterSchool - Main Master Stylesheet (Modular Importer)
+   ========================================================================== */
+
+@import url('variables.css');
+@import url('layout.css');
+@import url('components.css');
+@import url('idcard.css');
